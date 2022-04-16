@@ -1,22 +1,33 @@
 import React from "react";
-import { FaSun, FaMoon } from "react-icons/fa";
+import MoonIcon from "../assets/images/icon-moon.svg";
+import SunMoon from "../assets/images/icon-sun.svg";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Toggle = () => {
   const { theme, setTheme } = React.useContext(ThemeContext);
 
   return (
-    <div className="transition duration-500 ease-in-out rounded-full p-2">
+    <div className="transition duration-500 ease-in-out rounded-full">
       {theme === "dark" ? (
-        <FaSun
+        <div
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
-        />
+          className="flex cursor-pointer items-center"
+        >
+          <h2 className="font-space font-bold text-sm tracking-[.2em] mr-4 text-color-text-second-light">
+            LIGHT
+          </h2>
+          <img src={SunMoon} alt="" />
+        </div>
       ) : (
-        <FaMoon
+        <div
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-          className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
-        />
+          className="flex cursor-pointer items-center"
+        >
+          <h2 className="font-space font-bold text-sm tracking-[.2em] mr-4 text-color-text-second-light">
+            DARK
+          </h2>
+          <img src={MoonIcon} alt="" />
+        </div>
       )}
     </div>
   );
