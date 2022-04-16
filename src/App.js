@@ -1,8 +1,10 @@
+import Toggle from "./components/ToggleMode";
+
 const App = () => {
   return (
-    <main>
-      Hello
-    </main>
+    <div>
+      <Toggle />
+    </div>
   );
 }
 
