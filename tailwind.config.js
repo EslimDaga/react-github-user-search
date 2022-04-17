@@ -10,6 +10,8 @@ module.exports = {
         "color-primary-dark": "#0079FF",
         "color-text-primary-light": "#4B6A9B",
         "color-text-second-light": "#697C9A",
+        "color-text-third-light": "#222731",
+        "color-text-third-dark": "#90A4D4",
         "color-text-default-light": "#2B3442",
       },
       fontFamily: {
