@@ -8,6 +8,7 @@ module.exports = {
         "color-body-dark": "#141D2F",
         "color-primary-light": "#0079FF",
         "color-primary-dark": "#0079FF",
+        "color-second-dark": "#1E2A47",
         "color-text-primary-light": "#4B6A9B",
         "color-text-second-light": "#697C9A",
         "color-text-third-light": "#222731",
@@ -19,6 +20,7 @@ module.exports = {
       },
       boxShadow: {
         "input-search": "0 16px 30px -25px rgba(70, 96, 187, 20)",
+        "content": "0 16px 30px -25px rgba(70, 96, 187, 20)",
       },
     },
   },
