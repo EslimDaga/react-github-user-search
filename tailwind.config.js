@@ -14,13 +14,14 @@ module.exports = {
         "color-text-third-light": "#222731",
         "color-text-third-dark": "#90A4D4",
         "color-text-default-light": "#2B3442",
+        "color-error": "#F74646",
       },
       fontFamily: {
         space: ["Space Mono", "monospace"],
       },
       boxShadow: {
         "input-search": "0 16px 30px -25px rgba(70, 96, 187, 20)",
-        "content": "0 16px 30px -25px rgba(70, 96, 187, 20)",
+        content: "0 16px 30px -25px rgba(70, 96, 187, 20)",
       },
     },
   },
