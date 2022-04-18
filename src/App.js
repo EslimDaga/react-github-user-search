@@ -60,7 +60,11 @@ const App = () => {
             <div className="absolute bottom-[7.5px] sm:bottom-[7.5px] md:bottom-[9.5px] lg:bottom-[9.5px] right-2">
               <button
                 type="submit"
-                className="pl-[18px] sm:pl-[18px] md:pl-[24px] lg:pl-[24px] pr-[14px] sm:pr-[14px] md:pr-[23px] lg:pr-[23px] py-[12.5px] rounded-[10px] bg-color-primary-light text-white font-space font-bold text-sm sm:text-sm md:text-base lg:text-base"
+                className={
+                  error || user.length > 0
+                    ? "pl-[18px] sm:pl-[18px] md:pl-[24px] lg:pl-[24px] pr-[14px] sm:pr-[14px] md:pr-[23px] lg:pr-[23px] py-[12.5px] rounded-[10px] bg-color-hover-button text-white font-space font-bold text-sm sm:text-sm md:text-base lg:text-base"
+                    : "pl-[18px] sm:pl-[18px] md:pl-[24px] lg:pl-[24px] pr-[14px] sm:pr-[14px] md:pr-[23px] lg:pr-[23px] py-[12.5px] rounded-[10px] bg-color-primary-light text-white font-space font-bold text-sm sm:text-sm md:text-base lg:text-base"
+                }
               >
                 Search
               </button>
