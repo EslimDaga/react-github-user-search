@@ -8,6 +8,7 @@ const App = () => {
 
   const [user, setUser] = useState("");
   const [userInfo, setUserInfo] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     setUser(e.target.value);
@@ -17,7 +18,13 @@ const App = () => {
     e.preventDefault();
     console.log("Searching:" , user);
     axios.get(`https://api.github.com/users/${user}`).then((r) => {
+      console.log(r);
       setUserInfo([r.data]);
+    }).catch(function(){
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      },5000)
     })
   }
 
@@ -45,6 +52,11 @@ const App = () => {
               placeholder="Search github username..."
               onChange={handleChange}
             />
+            {error && (
+              <p className="absolute right-[95px] sm:right-[95px] md:right-[140px] lg:right-[140px] top-[21px] sm:[21px] md:top-6 lg:top-6 text-color-error font-space font-bold text-[13px] sm:text-[13px] md:text-[15px] lg:text-[15px] hidden sm:block md:block lg:block">
+                No results
+              </p>
+            )}
             <div className="absolute bottom-[7.5px] sm:bottom-[7.5px] md:bottom-[9.5px] lg:bottom-[9.5px] right-2">
               <button
                 type="submit"
@@ -228,7 +240,13 @@ const App = () => {
                       );
                     } else if (user.twitter_username) {
                       twitter_username = (
-                        <a href={`https://twitter.com/${user.twitter_username}`} target="_blank" key={user.login} className="flex hover:underline cursor-pointer" rel="noreferrer">
+                        <a
+                          href={`https://twitter.com/${user.twitter_username}`}
+                          target="_blank"
+                          key={user.login}
+                          className="flex hover:underline cursor-pointer"
+                          rel="noreferrer"
+                        >
                           <svg
                             className="fill-color-text-primary-light dark:fill-white mr-[19.12px]"
                             height="18"
@@ -289,7 +307,13 @@ const App = () => {
                       );
                     } else if (user.blog) {
                       blog = (
-                        <a href={user.blog} key={user.login} target="_blank" className="flex hover:underline cursor-pointer" rel="noreferrer">
+                        <a
+                          href={user.blog}
+                          key={user.login}
+                          target="_blank"
+                          className="flex hover:underline cursor-pointer"
+                          rel="noreferrer"
+                        >
                           <svg
                             className="fill-color-text-primary-light dark:fill-white mr-[14.12px]"
                             height="20"
@@ -333,44 +357,44 @@ const App = () => {
                   userInfo.map((user) => {
                     let company = "";
                     if (user.company === null) {
-                        company = (
-                          <div key={user.login} className="flex">
-                            <svg
-                              className="fill-color-text-primary-light dark:fill-white opacity-50 mr-[19.12px]"
-                              height="20"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <g>
-                                <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z" />
-                              </g>
-                            </svg>
-                            <h1
-                              key={user.login}
-                              className="font-space font-normal text-[15px] opacity-50 text-color-text-primary-light dark:text-white"
-                            >
-                              Not Available
-                            </h1>
-                          </div>
-                        );
+                      company = (
+                        <div key={user.login} className="flex">
+                          <svg
+                            className="fill-color-text-primary-light dark:fill-white opacity-50 mr-[19.12px]"
+                            height="20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g>
+                              <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z" />
+                            </g>
+                          </svg>
+                          <h1
+                            key={user.login}
+                            className="font-space font-normal text-[15px] opacity-50 text-color-text-primary-light dark:text-white"
+                          >
+                            Not Available
+                          </h1>
+                        </div>
+                      );
                     } else if (user.company) {
-                        company = (
-                          <div key={user.login} className="flex">
-                            <svg
-                              className="fill-color-text-primary-light dark:fill-white mr-[19.12px]"
-                              height="20"
-                              width="20"
-                              xmlns="http://www.w3.org/2000/svg"
-                            >
-                              <g>
-                                <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z" />
-                              </g>
-                            </svg>
-                            <h1 className="font-space font-normal text-[15px] text-color-text-primary-light dark:text-white">
-                              {user.company}
-                            </h1>
-                          </div>
-                        );
+                      company = (
+                        <div key={user.login} className="flex">
+                          <svg
+                            className="fill-color-text-primary-light dark:fill-white mr-[19.12px]"
+                            height="20"
+                            width="20"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g>
+                              <path d="M10.858 1.558L1.7.167A1.477 1.477 0 00.517.492 1.49 1.49 0 000 1.608v17.559c0 .458.375.833.833.833h2.709v-4.375c0-.808.65-1.458 1.458-1.458h2.083c.809 0 1.459.65 1.459 1.458V20h3.541V3a1.46 1.46 0 00-1.225-1.442zM4.583 12.292h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm4.167 7.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5H7.5a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zM18.85 9.035l-5.933-1.242V20h5.625A1.46 1.46 0 0020 18.542V10.46c0-.688-.47-1.274-1.15-1.425zM16.875 17.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25zm0-2.5h-1.25a.625.625 0 010-1.25h1.25a.625.625 0 010 1.25z" />
+                            </g>
+                          </svg>
+                          <h1 className="font-space font-normal text-[15px] text-color-text-primary-light dark:text-white">
+                            {user.company}
+                          </h1>
+                        </div>
+                      );
                     }
                     return company;
                   })
