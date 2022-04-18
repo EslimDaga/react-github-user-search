@@ -48,7 +48,7 @@ const App = () => {
             </div>
             <input
               type="text"
-              className="w-full bg-white dark:bg-color-second-dark h-[3.75rem] sm:h-[3.75rem] md:h-[4.313rem] lg:h-[4.313rem] rounded-[15px] pl-[45px] sm:pl-[45px] md:pl-20 lg:pl-20 font-space font-medium text-[13px] sm:text-[13px] md:text-lg lg:text-lg text-color-text-primary-light dark:text-white placeholder:font-space placeholder:font-normal md:placeholder:text-lg lg:placeholder:text-lg focus:outline-none"
+              className="w-full bg-white dark:bg-color-second-dark h-[3.75rem] sm:h-[3.75rem] md:h-[4.313rem] lg:h-[4.313rem] rounded-[15px] pl-[45px] sm:pl-[45px] md:pl-20 lg:pl-20 font-space font-medium text-[13px] sm:text-[13px] md:text-lg lg:text-lg text-color-text-primary-light dark:text-white placeholder:font-space placeholder:font-normal md:placeholder:text-lg lg:placeholder:text-lg focus:outline-none cursor-pointer"
               placeholder="Search github username..."
               onChange={handleChange}
             />
