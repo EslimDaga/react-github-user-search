@@ -47,8 +47,8 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/EslimDaga/react-github-user-search](https://github.com/EslimDaga/react-github-user-search)
+- Live Site URL: [https://react-user-github-search-app.netlify.app/](https://react-user-github-search-app.netlify.app/)
 
 ## My process
 
