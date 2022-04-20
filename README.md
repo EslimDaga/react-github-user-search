@@ -2,7 +2,7 @@
 
 This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Installation and Setup Instructions
+## Installation and Setup Instructions 💻
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.
 
@@ -18,7 +18,7 @@ To Visit App:
 
 `localhost:3000`
 
-## Table of contents
+## Table of contents 📄
 
 - [Frontend Mentor - GitHub user search app solution](#frontend-mentor---github-user-search-app-solution)
   - [Installation](#installation-and-setup-instructions)
@@ -31,7 +31,7 @@ To Visit App:
     - [Built with](#built-with)
   - [Author](#author)
 
-## Overview
+## Overview 🧩
 
 ### The challenge
 
@@ -44,23 +44,23 @@ Users should be able to:
 - Switch between light and dark themes
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-### Screenshot
+### Screenshot  📷
 
 ![](./src/assets/images/screenshot.png)
 
-### Links
+### Links 🔗
 
 - Solution URL: [https://github.com/EslimDaga/react-github-user-search](https://github.com/EslimDaga/react-github-user-search)
 - Live Site URL: [https://react-user-github-search-app.netlify.app/](https://react-user-github-search-app.netlify.app/)
 
-## My process
+## My process 📄
 
 ### Built with
 
 - [React](https://reactjs.org/) - JS library
 - [Tailwind ](https://tailwindcss.com/) - CSS framework
 
-## Author
+## Author 👨🏻‍💻
 
 - Frontend Mentor - [@eslimdaga](https://www.frontendmentor.io/profile/eslimdaga)
 - Twitter - [@eslimdaga](https://www.twitter.com/eslimdaga)
