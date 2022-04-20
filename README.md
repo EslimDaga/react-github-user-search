@@ -44,7 +44,7 @@ Users should be able to:
 - Switch between light and dark themes
 - **Bonus**: Have the correct color scheme chosen for them based on their computer preferences. _Hint_: Research `prefers-color-scheme` in CSS.
 
-### Screenshot  📷
+### Screenshot
 
 ![](./src/assets/images/screenshot.png)
 
